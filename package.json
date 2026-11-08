@@ -1,0 +1,84 @@
+{
+  "name": "minecraft-desktop",
+  "version": "1.2.0",
+  "description": "把 Windows 桌面变成 Minecraft Java 版的界面",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --no-system",
+    "quit": "electron . --quit",
+    "restore": "electron . --restore",
+    "extract": "node tools/extract-assets.js",
+    "test:capture": "electron . --capture=.dev/shots",
+    "dist": "electron-builder --win nsis",
+    "icon": "electron tools/make-icon.js",
+    "export-qr": "electron tools/export-donate-qr.js"
+  },
+  "keywords": [
+    "minecraft",
+    "desktop",
+    "electron",
+    "ui"
+  ],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "koffi": "^3.3.3"
+  },
+  "devDependencies": {
+    "electron-builder": "^26.15.3",
+    "electron": "^44.9.0"
+  },
+  "build": {
+    "appId": "com.minecraftdesktop.app",
+    "productName": "Minecraft 桌面",
+    "executableName": "MinecraftDesktop",
+    "copyright": "Minecraft 是 Mojang Studios 的商标；本程序与 Mojang、Microsoft 无关",
+    "electronDist": "node_modules/electron/dist",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**",
+      "renderer/**",
+      "!renderer/js/test.js",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "node_modules/@koromix/**"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.png",
+      "artifactName": "Minecraft桌面-${version}-安装包.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerLanguages": [
+        "zh_CN"
+      ],
+      "language": "2052",
+      "menuCategory": "Minecraft 桌面",
+      "shortcutName": "Minecraft 桌面",
+      "createDesktopShortcut": false,
+      "createStartMenuShortcut": true,
+      "runAfterFinish": true,
+      "deleteAppDataOnUninstall": false,
+      "include": "build/installer.nsh",
+      "uninstallDisplayName": "Minecraft 桌面"
+    }
+  }
+}

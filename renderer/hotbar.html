@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' mcd:; img-src 'self' mcd: data:; media-src mcd:; style-src 'self' 'unsafe-inline'; script-src 'self' mcd:">
+<title>Minecraft Hotbar</title>
+<style>
+  html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: transparent; cursor: default; user-select: none; }
+  canvas { position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; display: block; }
+</style>
+</head>
+<body>
+<canvas id="gui"></canvas>
+<script type="module" src="js/app-hotbar.js"></script>
+</body>
+</html>
