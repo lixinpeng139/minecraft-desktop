@@ -2,6 +2,8 @@
 
 把 Windows 桌面变成 Minecraft Java 版的界面。所有贴图、字体、音效和中文文本都直接读取自本机安装的 Minecraft（不随项目分发）。
 
+下载安装包：[Releases](https://github.com/lixinpeng139/minecraft-desktop/releases/latest)（Windows 10 / 11 x64）
+
 ## 使用
 
 | 操作 | 效果 |
@@ -62,7 +64,7 @@
 
 ## 安装
 
-运行 `dist/Minecraft桌面-1.2.0-安装包.exe`。安装后在开始菜单的“Minecraft 桌面”文件夹里有三个快捷方式：启动、退出、恢复任务栏和桌面图标。
+从 [Releases](https://github.com/lixinpeng139/minecraft-desktop/releases/latest) 下载最新的安装包（`Minecraft-Desktop-x.y.z-Setup.exe`，下载列表里显示为“Minecraft桌面-x.y.z-安装包”）并运行。安装后在开始菜单的“Minecraft 桌面”文件夹里有三个快捷方式：启动、退出、恢复任务栏和桌面图标。
 
 首次启动会自动从 Mojang 官方服务器下载界面资源（约 30 MB，只需要一次），窗口里会显示进度、下载速度和剩余时间。连不上官方服务器时会自动改用 BMCLAPI 国内镜像；下载失败可以点“重试”。
 
@@ -84,3 +86,5 @@
 - `npm run test:capture`：在不可见窗口中依次打开所有界面并截图到 `.dev/shots/`
 
 Minecraft 是 Mojang Studios 的商标；本项目与 Mojang、Microsoft 无关。
+
+本项目以 [MIT 许可证](LICENSE)发布；从本机 Minecraft 提取的贴图、字体、音效等资源版权归 Mojang Studios 所有，不包含在本仓库和安装包中。
